@@ -4,7 +4,7 @@ Repository ini berisi kumpulan tugas-tugas dari course Version Control System SI
 
 ## Daftar Pertemuan
 
-- **Pertemuan 1**: 2 September 2025
+- **Pertemuan 1**: 15 September 2025
 
 ## Struktur Repo
 - Setiap tugas akan disimpan sesuai pertemuan.
