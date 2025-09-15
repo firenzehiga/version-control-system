@@ -1,6 +1,6 @@
 # Version Control System | SIB NF Academy
 
-Repository ini berisi kumpulan tugas-tugas dari course Desain Web SIB NF Academy.
+Repository ini berisi kumpulan tugas-tugas dari course Version Control System SIB NF Academy.
 
 ## Daftar Pertemuan
 
