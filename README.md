@@ -5,7 +5,7 @@ Repository ini berisi kumpulan tugas-tugas dari course Version Control System SI
 ## Daftar Pertemuan
 
 - **Pertemuan 1**: 15 September 2025
-- [cv-biodata.html](cv-biodata.html)
+- [index.html](index.html)
 
 ## Struktur Repo
 - Setiap tugas akan disimpan sesuai pertemuan.

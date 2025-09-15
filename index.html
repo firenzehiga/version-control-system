@@ -1,25 +1,113 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+<head>	
+	<title>	B'Day Countdown</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bgimg {
+  background-image: url(bg.jpg);
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+</style>
 <body>
-<div class="road">
-	<div class="taxi">
-		<div class="light_beam"></div>
-		<span>
-			<b></b>
-			<i></i>
-		</span>
-	</div>
-	<div class="taxi">
-		<div class="light_beam"></div>
-		<span>
-			<b></b>
-			<i></i>
-		</span>
-	</div>
+
+<div class="bgimg">
+  <div class="topleft">
+    <p>Firenze Higa P.</p>
+
+  </div>
+  <div class="middle">
+    <h1>COMING SOON</h1>
+    <hr>		
+<p id="demo"></p>
+  </div>
+  <div class="bottomleft">
+    <p>notfound</p>
+  </div>
 </div>
+
+<button id="play-audio-btn" style="position:fixed;top:20px;right:20px;z-index:1000;font-size:18px;padding:10px 20px;">Play Background Music</button>
+<audio id="bg-audio" src="sound.mpeg" loop style="display:none"></audio>
+
+</div>
+
+
+<!-- Menampilkan timer countdown dengan elemen -->
+
+<script>
+// Set waktu yang kita hitung mundur
+var countDownDate = new Date("May 29, 2026 00:00:00").getTime();
+
+// Update countdown setiap 1 detik
+var x = setInterval(function() {
+
+  // Dapatkan tanggal dan waktu hari ini
+  var now = new Date().getTime();
+
+  // Cari jarak antara sekarang dan tanggal hitung mundur
+  var distance = countDownDate - now;
+
+  // Perhitungan waktu untuk hari, jam, menit, dan detik
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Tampilkan hasil dengan satuan bahasa Indonesia
+  document.getElementById("demo").innerHTML = days + " hari " + hours + " jam "
+    + minutes + " menit " + seconds + " detik ";
+
+  // Kalau hitung mundur selesai, tampilkan teks "EXPIRED"
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+// Play audio saat tombol diklik dan sembunyikan tombol
+document.getElementById('play-audio-btn').addEventListener('click', function() {
+  var audio = document.getElementById('bg-audio');
+  audio.play();
+  this.style.display = 'none';
+});
+</script>
 </body>
 </html>
